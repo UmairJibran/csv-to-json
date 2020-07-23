@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/UmairJibran/csv-to-json/issues"
   },
-  "homepage": "https://github.com/UmairJibran/csv-to-json#readme"
+  "homepage": "https://github.com/UmairJibran/csv-to-json#readme",
+  "dependencies": {
+    "csvtojson": "2.0.10"
+  }
 }
