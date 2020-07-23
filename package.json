@@ -1,0 +1,22 @@
+{
+  "name": "csv-to-json",
+  "version": "1.0.0",
+  "description": "This is first assignment in node js fundamentals in edx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmairJibran/csv-to-json.git"
+  },
+  "keywords": [
+    "csv-to-json"
+  ],
+  "author": "Umair Jibran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmairJibran/csv-to-json/issues"
+  },
+  "homepage": "https://github.com/UmairJibran/csv-to-json#readme"
+}
