@@ -2,6 +2,7 @@
 //*core requires
 const path = require("path");
 const fs = require("fs");
+const os = require("os");
 
 //*custom modules
 const writeToFile = require("./write_to_file.js");
@@ -19,11 +20,8 @@ async function runner() {
       csvObject += data;
       processCSV(
          csvObject,
-         (callback = (jsonObject) => {
-            //Writting JSON to file!
-            console.log(JSON.stringify(jsonObject));
-            // !writeToFile(JSON.stringify(jsonObject), pathToJSON);
-         })
+         (callback = (jsonObject) =>
+            writeToFile(JSON.stringify(jsonObject), pathToJSON)) //*Writting JSON to file!
       );
    });
 }
@@ -31,8 +29,17 @@ async function runner() {
 runner();
 
 function processCSV(csv, callback) {
-   //TODO: Process this CSV object, and send JSON Object to callback
-   let jsonObject = "";
-   console.log(csv);
+   //*Processed this CSV object, and send JSON Object to callback
+   let jsonObject = [];
+   csv = csv.split(os.EOL);
+   let keys = csv[0].split(",");
+   for (let index = 1; index < csv.length - 1; ++index) {
+      let tempValues = csv[index].split(",");
+      let json = {};
+      for (let j = 0; j < keys.length; j++) {
+         json[keys[j]] = tempValues[j];
+      }
+      jsonObject.push(json);
+   }
    callback(jsonObject);
 }
